@@ -33,3 +33,8 @@
 
 # VisualStudio Stuff
 .vs/*
+x64/*
+Algorith.6ec6cf08/*
+*.vcxproj
+AlgorithmAdventure.vcxproj
+AlgorithmAdventure.vcxproj.filters
