@@ -1,4 +1,16 @@
 #include "NPC.hpp"
+#include "GameCharacter.hpp"
+#include "Interactable.hpp"
+
+
+
+NPC::NPC(std::string role)
+{
+}
+
+NPC::NPC()
+{
+}
 
 void NPC::act()
 {
@@ -6,16 +18,17 @@ void NPC::act()
 
 void NPC::speak()
 {
+	std::cout << "Hello, I am an NPC in this game!" << std::endl;
 }
 
-void NPC::interactWith(GameCharacter target)
+void NPC::interactWith()
 {
 }
 
-void NPC::trade(GameCharacter target)
+void NPC::trade()
 {
 }
 
-void NPC::attack(GameCharacter target)
+void NPC::attack()
 {
 }

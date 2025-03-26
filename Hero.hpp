@@ -5,11 +5,13 @@
 class Hero : public GameCharacter, public Interactable
 {
 public:
+	Hero(std::string name, int health, int power, std::string quest);
+	Hero();
 	void act() override;
 	void speak() override;
-	void interactWith(GameCharacter) override;
-	void trade(GameCharacter) override;
-	void attack(GameCharacter) override;
+	void interactWith() override;
+	void trade() override;
+	void attack() override;
 
 private:
 	std::string name;
