@@ -5,21 +5,20 @@
 
 #include "GameCharacter.hpp"
 #include "Interactable.hpp"
+#include "Inventory.hpp"
 
 class Villian : public GameCharacter, public Interactible
 {
 private:
-	std::string Name;
-	int health;
-	int powerLevel;
 	int evilPoints;
 public:
 	Villian();
+	Villian(std::string);
 	Villian(std::string, int, int);
 	void act();
 	void speak();
 	void interactWith(GameCharacter& target);
-	void trade(GameCharacter& target);
+	void trade(GameCharacter& target, int, int);
 	void attack(GameCharacter& target);
 	int getEvilPoints();
 	void setEvilPoints(int);

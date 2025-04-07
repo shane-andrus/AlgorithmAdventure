@@ -2,7 +2,11 @@
 
 #include "Villain.hpp"
 
-Villian::Villian() : GameCharacter("John", 100, 0)
+Villian::Villian() : GameCharacter("John", 100, 1), evilPoints(1)
+{
+}
+
+Villian::Villian(std::string name) : GameCharacter(name, 100, 1), evilPoints(1)
 {
 }
 
@@ -28,9 +32,14 @@ void Villian::interactWith(GameCharacter& target)
 	target.speak();
 }
 
-void Villian::trade(GameCharacter& target)
+void Villian::trade(GameCharacter& target, int inventoryIndexThis, int inventoryIndexOther)
 {
-	//implement
+	Item thisItem = Item(inventory.getItem(inventoryIndexThis).getName(), inventory.getItem(inventoryIndexThis).getValue());
+	Item otherItem = Item(target.getInventory().getItem(inventoryIndexOther).getName(), target.getInventory().getItem(inventoryIndexOther).getValue());
+	inventory.addItem(otherItem);
+	inventory.removeItem(thisItem);
+	target.getInventory().addItem(thisItem);
+	target.getInventory().removeItem(otherItem);
 }
 
 void Villian::attack(GameCharacter& target)

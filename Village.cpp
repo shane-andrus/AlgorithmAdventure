@@ -6,6 +6,10 @@ Village::Village(): name("Springfield"), inhabitants(std::vector<NPC>())
 {
 }
 
+Village::Village(std::string name): name(name), inhabitants(std::vector<NPC>())
+{
+}
+
 Village::Village(std::string name, std::vector<NPC> inhabitants): name(name), inhabitants(inhabitants)
 {
 }

@@ -13,6 +13,7 @@ private:
 	std::vector<NPC> inhabitants;
 public:
 	Village();
+	Village(std::string);
 	Village(std::string, std::vector<NPC>);
 	void addInhabitant(NPC&);
 	void removeInhabitant(NPC&);

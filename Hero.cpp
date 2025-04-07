@@ -1,12 +1,17 @@
 #include <iostream>
 
 #include "Hero.hpp"
+#include "Item.hpp"
 
-Hero::Hero() : GameCharacter("John", 100, 0), quest("TBD"), inventory()
+Hero::Hero() : GameCharacter("John", 100, 1), quest("TBD")
 {
 }
 
-Hero::Hero(std::string name, int powerLevel) : GameCharacter(name, 100, powerLevel), quest("TBD"), inventory()
+Hero::Hero(std::string name) : GameCharacter(name, 100, 1), quest("TBD")
+{
+}
+
+Hero::Hero(std::string name, int powerLevel) : GameCharacter(name, 100, powerLevel), quest("TBD")
 {
 }
 
@@ -28,14 +33,19 @@ void Hero::interactWith(GameCharacter& target)
 	target.act();
 }
 
-void Hero::trade(GameCharacter& target)
+void Hero::trade(GameCharacter& target, int inventoryIndexThis, int inventoryIndexOther)
 {
-	//implement
+	Item thisItem = Item(inventory.getItem(inventoryIndexThis).getName(), inventory.getItem(inventoryIndexThis).getValue());
+	Item otherItem = Item(target.getInventory().getItem(inventoryIndexOther).getName(), target.getInventory().getItem(inventoryIndexOther).getValue());
+	inventory.addItem(otherItem);
+	inventory.removeItem(thisItem);
+	target.getInventory().addItem(thisItem);
+	target.getInventory().removeItem(otherItem);
 }
 
 void Hero::attack(GameCharacter& target)
 {
-	//implement
+	target.setHealth(target.getHealth() - powerLevel);
 }
 
 std::string Hero::getQuest()
@@ -46,9 +56,4 @@ std::string Hero::getQuest()
 void Hero::setQuest(std::string quest)
 {
 	this->quest = quest;
-}
-
-Inventory Hero::getInventory()
-{
-	return inventory;
 }

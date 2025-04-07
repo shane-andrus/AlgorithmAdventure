@@ -2,7 +2,15 @@
 
 #include "NPC.hpp"
 
-NPC::NPC() : GameCharacter("John", 100, 0), role("TBD")
+NPC::NPC() : GameCharacter("John", 100, 1), role("TBD")
+{
+}
+
+NPC::NPC(std::string name) : GameCharacter(name, 100, 1), role("TBD")
+{
+}
+
+NPC::NPC(std::string name, int powerLevel) : GameCharacter(name, 100, powerLevel), role("TBD")
 {
 }
 
@@ -28,9 +36,14 @@ void NPC::interactWith(GameCharacter& target)
 	target.speak();
 }
 
-void NPC::trade(GameCharacter& target)
+void NPC::trade(GameCharacter& target, int inventoryIndexThis, int inventoryIndexOther)
 {
-	//implement
+	Item thisItem = Item(inventory.getItem(inventoryIndexThis).getName(), inventory.getItem(inventoryIndexThis).getValue());
+	Item otherItem = Item(target.getInventory().getItem(inventoryIndexOther).getName(), target.getInventory().getItem(inventoryIndexOther).getValue());
+	inventory.addItem(otherItem);
+	inventory.removeItem(thisItem);
+	target.getInventory().addItem(thisItem);
+	target.getInventory().removeItem(otherItem);
 }
 
 void NPC::attack(GameCharacter& target)

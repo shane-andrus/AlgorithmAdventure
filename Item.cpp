@@ -4,6 +4,10 @@ Item::Item(): name("item"), value(0)
 {
 }
 
+Item::Item(std::string name): name(name), value(0)
+{
+}
+
 Item::Item(std::string name, int value): name(name), value(value)
 {
 }

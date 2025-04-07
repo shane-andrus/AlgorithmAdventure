@@ -11,18 +11,17 @@ class Hero : public GameCharacter, public Interactible
 {
 private:
 	std::string quest;
-	Inventory inventory;
 public:
 	Hero();
+	Hero(std::string);
 	Hero(std::string, int);
 	void act();
 	void speak();
 	void interactWith(GameCharacter& target);
-	void trade(GameCharacter& target);
+	void trade(GameCharacter& target, int, int);
 	void attack(GameCharacter& target);
 	std::string getQuest();
 	void setQuest(std::string);
-	Inventory getInventory();
 };
 
 #endif

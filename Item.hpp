@@ -10,6 +10,7 @@ private:
 	int value;
 public:
 	Item();
+	Item(std::string);
 	Item(std::string, int);
 	std::string getName();
 	void setName(std::string);
