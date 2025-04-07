@@ -15,7 +15,8 @@ int main() {
     inventory.removeItem("Health Potion");
     inventory.listItems();
 
-    inventory.removeItem("Bow"); // Trying to remove an item that doesn’t exist
+    inventory.removeItem("Bow"); // Trying to remove an item that doesnï¿½t exist
 
     return 0;
 }
+
