@@ -24,6 +24,7 @@ public:
     int getPowerLevel();
     void setPowerLevel(int);
     Inventory getInventory();
+    virtual ~GameCharacter();
 };
 
 #endif

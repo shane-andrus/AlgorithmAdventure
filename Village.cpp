@@ -33,3 +33,7 @@ NPC& Village::getInhabitant(int index)
 {
 	return inhabitants[index];
 }
+
+Village::~Village()
+{
+}

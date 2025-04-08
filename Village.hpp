@@ -19,6 +19,7 @@ public:
 	void removeInhabitant(NPC&);
 	std::vector<NPC> getInhabitants();
 	NPC& getInhabitant(int);
+	virtual ~Village();
 };
 
 #endif

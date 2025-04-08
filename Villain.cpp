@@ -44,7 +44,7 @@ void Villian::trade(GameCharacter& target, int inventoryIndexThis, int inventory
 
 void Villian::attack(GameCharacter& target)
 {
-	//implement
+	target.setHealth(target.getHealth() - powerLevel*evilPoints);
 }
 
 int Villian::getEvilPoints()

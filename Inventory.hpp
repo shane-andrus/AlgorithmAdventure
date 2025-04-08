@@ -16,6 +16,13 @@ public:
     void removeItem(Item item);
     std::vector<Item> getItems();
     Item getItem(int);
+    int findItem(std::string);
+    int findItem(int);
+    int findSortedItem(std::string);
+    int findSortedItem(int);
+    void sortItemsByName();
+    void sortItemsByValue();
+    virtual ~Inventory();
 };
 
 #endif // !INVENTORY_HPP

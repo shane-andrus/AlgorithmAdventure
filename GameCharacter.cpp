@@ -46,3 +46,7 @@ Inventory GameCharacter::getInventory()
 {
 	return inventory;
 }
+
+GameCharacter::~GameCharacter()
+{
+}

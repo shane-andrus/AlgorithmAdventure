@@ -31,3 +31,7 @@ void Item::setValue(int value)
 {
     this->value = value;
 }
+
+Item::~Item()
+{
+}

@@ -48,7 +48,7 @@ void NPC::trade(GameCharacter& target, int inventoryIndexThis, int inventoryInde
 
 void NPC::attack(GameCharacter& target)
 {
-	//implement
+	target.setHealth(target.getHealth() - powerLevel*0.5);
 }
 
 std::string NPC::getRole()

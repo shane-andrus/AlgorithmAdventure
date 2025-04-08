@@ -16,6 +16,7 @@ public:
 	void setName(std::string);
 	int getValue();
 	void setValue(int);
+	virtual ~Item();
 };
 
 #endif // !ITEM_HPP
