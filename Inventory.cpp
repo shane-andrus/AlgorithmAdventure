@@ -99,20 +99,34 @@ int Inventory::findSortedItem(int value)
 	return -1;
 }
 
+// Sorting the inventory by name
+// Using a quadratic sort (insertion sort, O(n^2))
 void Inventory::sortItemsByName()
 {
+	Item currentItem;
+	for (int i = 1; i < items.size(); i++) {
+		currentItem = items[i];
+		for (int j = i - 1; j >= 0 && items[j].getName() > currentItem.getName(); j--) {
+			items[j + 1] = items[j];
+			if (j - 1 >= 0 && items[j - 1].getName() > currentItem.getName()) {
+				items[j + 1] = currentItem;
+			}
+		}
+	}
 }
 
 void Inventory::sortItemsByValue()
 {
-	int currentVal;
+	Item currentItem;
 	for (int i = 1; i < items.size(); i++) {
-		currentVal = items[i].getValue();
+		currentItem = items[i];
 		for (int j = i - 1; j >= 0 && items[j
-	].getValue() > currentVal; j--) {
+	].getValue() > currentItem.getValue(); j--) {
 			items[j + 1] = items[j];
+			if (j - 1 >= 0 && items[j - 1].getValue() > currentItem.getValue()) {
+				items[j + 1] = currentItem;
+			}
 		}
-		items[j + 10] = currentVal;
 	}
 }
 
