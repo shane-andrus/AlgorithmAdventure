@@ -1,15 +1,13 @@
 #include <vector>
 
+#include "Hero.hpp"
+#include "Item.hpp"
 #include "Village.hpp"
 #include "NPC.hpp"
-#include "Item.hpp"
 
 int main() {
-	// Creating the village of Stonetown
-	Village stonetown("Stonetown");
-
-	// Creating the Baron Ruport the Rich
-	NPC ruportTheRich("Ruport the Rich", 4, "Baron");
+	// Creating Ruport the Rich
+	Hero ruportTheRich("Ruport the Rich", 4);
 
 	// Creating treasures
 	Item goldNecklace("gold necklace", 20);
@@ -32,9 +30,41 @@ int main() {
 	
 	// Finding the index of the treasure worth 70
 	int indexOf70Treasure = ruportTheRich.getInventory().findSortedItem(70);
+
+	// Organizing the treasures by name
+	ruportTheRich.getInventory().sortItemsByName();
+
+	// Organizing the treasures by value
+	ruportTheRich.getInventory().sortItemsByValue();
 	
-	// Baron Ruport the Rich visits Stonetown
-	stonetown.addInhabitant(ruportTheRich);
+	// Creating the village of Stonetown
+	Village stonetown("Stonetown");
+
+	// Creating warriors
+	NPC george("George", 12, "warrior");
+	NPC galahad("Galahad", 11, "warrior");
+	NPC siegfried("Siegfried", 10, "warrior");
+	NPC robert("Robert the Crafty", 9, "warrior");
+	NPC rodrigo("Rodrigo el Cid", 8, "warrior");
+	NPC william("William the Great", 7, "warrior");
+	NPC richard("Richard the Lionhearted", 6, "warrior");
+	NPC james("James", 5, "warrior");
+	NPC bertrand("Bertrand the Eagle", 4, "warrior");
+	NPC edward("Edward the Prince", 3, "warrior");
+	NPC henry("Henry the Hotspur", 2, "warrior");
+
+	// The warriors move to Stonetown
+	stonetown.addInhabitant(bertrand);
+	stonetown.addInhabitant(edward);
+	stonetown.addInhabitant(galahad);
+	stonetown.addInhabitant(george);
+	stonetown.addInhabitant(henry);
+	stonetown.addInhabitant(james);
+	stonetown.addInhabitant(richard);
+	stonetown.addInhabitant(robert);
+	stonetown.addInhabitant(rodrigo);
+	stonetown.addInhabitant(siegfried);
+	stonetown.addInhabitant(william);
 
 	return 0;
 }

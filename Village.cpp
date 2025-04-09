@@ -34,6 +34,44 @@ NPC& Village::getInhabitant(int index)
 	return inhabitants[index];
 }
 
+void Village::sortInhabitantsByName()
+{
+}
+
+void Village::sortInhabitantsByPowerLevel()
+{
+}
+
+int Village::partitionByName(std::string, std::string, std::string)
+{
+	return 0;
+}
+
+int Village::partitionByPowerLevel(int low, int high, int pivot)
+{
+	int i = low;
+	int j = low;
+	while (i <= high) {
+		if (inhabitants[i].getPowerLevel() > pivot) {
+			i++;
+		}
+		else {
+			swapNPCs(inhabitants, i, j);
+			i++;
+			j++;
+		}
+	}
+	return j - 1;
+}
+
+void Village::swapNPCs(std::vector<NPC> people, int pos1, int pos2)
+{
+	NPC temp;
+	temp = people[pos1];
+	people[pos1] = people[pos2];
+	people[pos2] = temp;
+}
+
 Village::~Village()
 {
 }

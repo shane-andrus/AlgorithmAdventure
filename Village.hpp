@@ -19,6 +19,11 @@ public:
 	void removeInhabitant(NPC&);
 	std::vector<NPC> getInhabitants();
 	NPC& getInhabitant(int);
+	void sortInhabitantsByName();
+	void sortInhabitantsByPowerLevel();
+	int partitionByName(std::string, std::string, std::string);
+	int partitionByPowerLevel(int, int, int);
+	void swapNPCs(std::vector<NPC>, int, int);
 	virtual ~Village();
 };
 
