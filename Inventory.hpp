@@ -13,6 +13,7 @@ public:
 	void addItem(const Item& item);
 	void removeItem(const std::string& itemName);
 	void listItems() const;
+	void randomItem();
 
 private:
 	std::vector<Item> items;
