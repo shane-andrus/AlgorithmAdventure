@@ -15,5 +15,7 @@ public:
    void interact(gameCharacter* target);  
    void trade(gameCharacter* target);  
    void attack(gameCharacter* target);  
+   Npc(std::string n, int h, int p) : gameCharacter(n, h, p), role("Villager") {} // Constructor
+   Npc() : gameCharacter("NPC", 100, 10), role("Villager") {} // Default constructor
 };  
 #endif
