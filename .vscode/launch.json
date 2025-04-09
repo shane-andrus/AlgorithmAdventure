@@ -50,5 +50,5 @@
             "preLaunchTask": "C/C++: clang++ build active file", // Ensure this task exists in tasks.json
             "miDebuggerPath": "/usr/bin/lldb" // Added miDebuggerPath for lldb
         }
-    ]
+    ] 
 }

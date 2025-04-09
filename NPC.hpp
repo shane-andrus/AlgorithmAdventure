@@ -1,16 +1,25 @@
+#ifndef NPC_HPP
+#define NPC_HPP
+
 #include <string>
 #include <ostream>
+#include "GameCharacter.hpp"
 
-class NPC {
-    std::string role;
-public:
-    NPC(const std::string& name) : name(name) {}
+class NPC : public GameCharacter {
+    public:
+        NPC();
+        NPC(const std::string& role); 
+        std::string getRole() const;
+        void act() override;
+        void speak() override ;
+        void interactWith(GameCharacter* target) override;
+        void trade(GameCharacter* target) override;
+        void attack(GameCharacter* target) override;
+    
+        
+    
+    
+        std::string role;
+    };
 
-    friend std::ostream& operator<<(std::ostream& os, const NPC& npc) {
-        os << "NPC Name: " << npc.name;
-        return os;
-    }
-
-private:
-    std::string name;
-};
+#endif // NPC_HPP

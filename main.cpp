@@ -3,7 +3,9 @@
 #include <string>
 #include "NPC.cpp"
 int main() {
-    NPC NPC1("Merchant");
+    NPC merchant("Merchant");
 
-    std::cout << NPC1 << std::endl;
-}
+    std::cout << merchant << std::endl;
+
+    return 0;
+} 
