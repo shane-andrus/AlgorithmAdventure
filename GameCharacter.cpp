@@ -17,3 +17,18 @@ void GameCharacter::takeDamage(int damage)
 	health -= damage;
 	std::cout << name << " takes " << damage << " damage! Remaining health: " << health << std::endl;
 }
+
+std::string GameCharacter::getName() 
+{
+	return name;
+}
+
+int GameCharacter::getHealth() 
+{
+	return health;
+}
+
+int GameCharacter::getPowerLevel() 
+{
+	return powerLevel;
+}

@@ -12,11 +12,11 @@ public:
 	virtual void act() = 0;
 	virtual void speak() = 0;
 
-	std::string getName() const { return name; };
-	int getHealth() const { return health; };
-	int getPowerLevel() const { return powerLevel; };
+	std::string getName ();
+	int getHealth();
+	int getPowerLevel();
 
-	void takeDamage(int damage) { health -= damage; };
+	void takeDamage(int damage);
 protected:
 	std::string name;
 	int health;

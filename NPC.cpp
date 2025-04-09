@@ -18,10 +18,20 @@ void NPC::speak() {
 	std::cout << name << " says: Hello, traveler! I am a " << role << "." << std::endl;
 }
 
+void NPC::attack(GameCharacter* character) {
+	std::cout << name << " attacks " << character->getName() << " with a weak punch!" << std::endl;
+	character->takeDamage(5);
+}
+
 void NPC::interactWith(GameCharacter* character) {
 	std::cout << name << " stares blankly at " << character->getName() << std::endl;
 }
 
 void NPC::trade(GameCharacter* character) {
 	std::cout << name << " offers a trade to " << character->getName() << std::endl;
+}
+
+std::string NPC::giveQuest(GameCharacter* character) {
+	std::cout << name << " gives a quest to " << character->getName() << std::endl;
+	return "Find the lost treasure!";
 }
