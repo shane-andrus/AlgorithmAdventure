@@ -1,18 +1,24 @@
+#ifndef NPC_HPP
+#define NPC_HPP
 #include "GameCharacter.hpp"
 
 
-class NPC : public GameCharacter, public Interactable
+class NPC : public GameCharacter
 {
 public:
-	NPC(std::string role);
+	NPC(std::string role, std::string name);
 	NPC();
 	void act() override;
 	void speak() override;
-	void interactWith() override;
-	void trade() override;
-	void attack() override;
+	void interactWith(GameCharacter* target) override;
+	void trade(GameCharacter* target) override;
+	void attack(GameCharacter* target) override;
+
+	std::string getRole();
+	void setRole(std::string role);
 
 private: 
 	std::string role;
 
 };
+#endif
