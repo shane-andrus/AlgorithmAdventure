@@ -43,5 +43,12 @@ int main() {
 	village.removeInhabitant(npc1);
 
 	//Add a Item to the inventory
+	Item item("Fire Sword", 15);
+	Inventory inventory;
+	inventory.addItem(item);
 
+	//Remov a Item from the inventory
+	inventory.removeItem(item);
+
+	return 0;
 }

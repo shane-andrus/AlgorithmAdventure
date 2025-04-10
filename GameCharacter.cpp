@@ -2,21 +2,25 @@
 
 gameCharacter::gameCharacter()
 {
-	name = "Unknown";
-	health = 100;
-	powerlevel = 10;
+name = "Unknown";
+health = 100;
+powerlevel = 10;
 }
-gameCharacter::gameCharacter(std::string n, int h, int p) : name(n), health(h), powerlevel(p) {}
+
+gameCharacter::gameCharacter(const std::string& n, int h, int p) : name(n), health(h), powerlevel(p) {}
+
+
 std::string gameCharacter::getName() const
 {
-	return name;
+return name;
 }
 
 int gameCharacter::getHealth() const
 {
-	return 0;
+return health; // Fixed to return the correct member variable
 }
+
 int gameCharacter::getPowerLevel() const
 {
-	return 0;
+	return powerlevel; // Fixed to return the correct member variable
 }

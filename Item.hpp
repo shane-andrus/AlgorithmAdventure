@@ -1,18 +1,20 @@
+#ifndef ITEM_HPP
+#define ITEM_HPP
 #include <string>
-#include "Inventory.hpp"
 
-
-class Item: public Inventory {
+class Item {
 private:
    std::string name;
    int value;
 public:
    //Getters and Setters
-   std::string getName() const { return name; }
-   int getValue() const { return value; }
-   void setName(const std::string& n) { name = n; }
-   void setValue(int v) { value = v; }
+	std::string getName() const;
+	int getValue() const;
+	void setName(const std::string& n);
+	void setValue(int v);
    Item(std::string n, int v) : name(n), value(v) {} // Constructor
    Item() : name("Unknown"), value(0) {} // Default constructor
 
 };
+
+#endif // ITEM_HPP

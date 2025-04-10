@@ -4,7 +4,7 @@
 #include "GameCharacter.hpp"
 #include "Interactable.hpp"
 
-class Villain : public gameCharacter, public interactable {
+class Villain : public gameCharacter {
 protected:
 	int evilPoints;
 public:

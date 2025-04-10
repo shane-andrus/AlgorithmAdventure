@@ -4,7 +4,7 @@
 #include <string>  
 #include <vector>  
 #include "Item.hpp"  
-#include "Hero.hpp"  
+
 
 class Inventory {  
 private:  
@@ -12,20 +12,14 @@ private:
 
 public:  
   //Defalut constructor
-  Inventory() {}
+    Inventory();
+    ~Inventory(); // Destructor
 
   // Function to add an item to the inventory  
-  void addItem(const Item& item) {  
-      slots.push_back(item);  
-  }  
+    void addItem(const Item& item);
 
-  // Function to remove an item from the inventory  
-  void removeItem(const Item& item) {  
-      auto it = std::find(slots.begin(), slots.end(), item);  
-      if (it != slots.end()) {  
-          slots.erase(it);  
-      }  
-  }  
+        // Function to remove an item from the inventory  
+        void removeItem(const Item& item);
 };  
 
 #endif

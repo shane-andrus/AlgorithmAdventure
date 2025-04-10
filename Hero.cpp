@@ -27,3 +27,11 @@ void Hero::attack(gameCharacter* target)
 {
 	std::cout << name << " attacks " << target->getName() << std::endl;
 }
+
+Hero::Hero(std::string n, int h, int p)
+{
+}
+
+Hero::Hero() : gameCharacter("Hero", 100, 10), quest("Save the world"), inventory()
+{
+}
