@@ -14,7 +14,7 @@ protected:
 public:
     // Constructors and destructor
     GameCharacter();
-    GameCharacter(const std::string& name, int health, int powerLevel);
+    GameCharacter(const std::string &name, int health, int powerLevel);
     virtual ~GameCharacter();
 
     // Getters

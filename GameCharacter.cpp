@@ -6,7 +6,7 @@ GameCharacter::GameCharacter(): name("N/A"), health(0), powerLevel(0)
     std::cout << "\nGame Character created! (Default)" << std::endl;
 }
 
-GameCharacter::GameCharacter(std::string name, int health, int powerLevel)
+GameCharacter::GameCharacter(const std::string& name, int health, int powerLevel)
 {
     std::cout << "\nGame Character created! \nName: " << name << "\nHealth: " << health << "\nPower Level: " << powerLevel; 
 }
