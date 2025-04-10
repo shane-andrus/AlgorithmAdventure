@@ -9,7 +9,7 @@ class Npc : public gameCharacter, public interactable {
 protected:  
    std::string role;  
 public:  
-   void setRole(const std::string& r) { role = r; }
+	void setRole();
    void act();  
    void speak();  
    void interact(gameCharacter* target);  

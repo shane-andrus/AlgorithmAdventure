@@ -3,6 +3,7 @@
 #include "NPC.hpp"
 #include "Villain.hpp""
 #include "Item.hpp"
+#include "Village.hpp"
 
 int main() {
 	// Create a Hero
@@ -32,4 +33,15 @@ int main() {
 	// Attack the Villain
 	hero.attack(&villain);
 	return 0;
+
+	//Add a NPC to the village
+	Village village("The Beginner's Village");
+	Npc npc1("Lucy", 80, 5);
+	village.addInhabitant(npc1);
+
+	//Remove a NPC from the village
+	village.removeInhabitant(npc1);
+
+	//Add a Item to the inventory
+
 }

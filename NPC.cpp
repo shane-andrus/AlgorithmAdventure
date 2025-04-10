@@ -2,6 +2,12 @@
 #include <iostream>
 #include "GameCharacter.hpp"
 
+void Npc::setRole()
+{
+	std::cout << "Enter the role of the NPC: ";
+	std::cin >> role;
+}
+
 void Npc::act()
 {
 	std::cout << name << " is working at their station." << std::endl;
@@ -28,9 +34,4 @@ void Npc::attack(gameCharacter* target)
 {
 	std::cout << name << " attacks " << target->getName() << std::endl;
 	std::cout << target->getName() << ": Why are you attacking me?!" << std::endl;
-}
-void Npc::setRole(const std::string& r)
-{
-	role = r;
-	std::cout << name << " is now a " << role << "." << std::endl;
 }

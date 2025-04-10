@@ -1,7 +1,8 @@
 #ifndef HERO_HPP  
 #define HERO_HPP  
 
-#include <string>  
+#include <string> 
+#include <iostream>
 #include "GameCharacter.hpp"  
 #include "Interactable.hpp"  
 #include "Inventory.hpp"  

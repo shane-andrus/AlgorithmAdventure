@@ -11,10 +11,6 @@ private:
 	std::vector<Item> slots;
 
 public:  
-  // Constructor to initialize the inventory with a hero
-  Inventory(const Hero& hero) {} 
-
-
   //Defalut constructor
   Inventory() {}
 
