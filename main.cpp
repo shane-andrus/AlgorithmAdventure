@@ -11,12 +11,14 @@ int main() {
 	hero.setName("Malcolm");
 	hero.setHealth(100);
 	hero.setPowerLevel(10);
+	hero.setQuest();
 
 	// Create an NPC
 	Npc npc;
 	npc.setName("Lucy the Villager");
 	npc.setHealth(80);
 	npc.setPowerLevel(5);
+	npc.setRole();
 
 	// Create a Villain
 	Villain villain;
@@ -25,30 +27,27 @@ int main() {
 	villain.setPowerLevel(500);
 
 	// Interact with the NPC
+	npc.speak();
 	hero.interact(&npc);
+	npc.interact(&hero);
 
 	// Trade with the NPC
 	hero.trade(&npc);
+	npc.trade(&hero);
 
 	// Attack the Villain
+	villain.speak();
 	hero.attack(&villain);
+	villain.attack(&hero);
 	return 0;
 
 	//Add a NPC to the village
-	Village village("The Beginner's Village");
-	Npc npc1("Lucy", 80, 5);
-	village.addInhabitant(npc1);
 
 	//Remove a NPC from the village
-	village.removeInhabitant(npc1);
 
 	//Add a Item to the inventory
-	Item item("Fire Sword", 15);
-	Inventory inventory;
-	inventory.addItem(item);
 
 	//Remov a Item from the inventory
-	inventory.removeItem(item);
 
 	return 0;
 }

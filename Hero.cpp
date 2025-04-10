@@ -3,6 +3,14 @@
 #include "Interactable.hpp"
 #include <iostream>
 
+void Hero::setQuest()
+{
+	std::string quest;
+	std::cout << "Enter a quest for the hero: ";
+	std::getline(std::cin, quest);
+	std::cout << "Quest set to: " << quest << std::endl;
+}
+
 void Hero::act()
 {
 	std::cout << name << " helps the people in the village, Reputation points +10 !" << std::endl;

@@ -4,7 +4,7 @@
 
 void Npc::setRole()
 {
-	std::cout << "Enter the role of the NPC: ";
+	std::cout << "Enter a role for the NPC: ";
 	std::cin >> role;
 }
 
