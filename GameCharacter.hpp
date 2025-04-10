@@ -9,8 +9,8 @@ public:
 	GameCharacter(std::string, int, int);
 	virtual ~GameCharacter();
 
-	virtual void act() = 0;
-	virtual void speak() = 0;
+	virtual void act();
+	virtual void speak();
 
 	std::string getName ();
 	int getHealth();

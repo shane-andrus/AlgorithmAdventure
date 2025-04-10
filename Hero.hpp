@@ -2,7 +2,6 @@
 #define HERO_HPP
 
 #include "GameCharacter.hpp"
-#include <iostream>
 
 class Hero : public GameCharacter
 {
@@ -18,9 +17,6 @@ public:
 	void receiveQuest(std::string quest);
 
 protected:
-	std::string name;
-	int health;
-	int powerLevel;
 	std::string quest;
 };
 

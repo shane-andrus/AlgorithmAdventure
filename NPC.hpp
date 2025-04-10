@@ -17,15 +17,12 @@ public:
 
 	std::string giveQuest(GameCharacter* character);
 
-	std::string getRole() const { return role; }
-	std::string getName() const { return name; }
-	int getHealth() const { return health; }
-	int getPowerLevel() const { return powerLevel; }
+	std::string getRole() const;
+	std::string getName() const;
+	int getHealth() const;
+	int getPowerLevel() const;
 
 protected:
 	std::string role;
-	int health;
-	int powerLevel;
-	std::string name;
 };
 #endif

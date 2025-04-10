@@ -35,3 +35,23 @@ std::string NPC::giveQuest(GameCharacter* character) {
 	std::cout << name << " gives a quest to " << character->getName() << std::endl;
 	return "Find the lost treasure!";
 }
+
+std::string NPC::getRole() const
+{
+	return std::string();
+}
+
+std::string NPC::getName() const
+{
+	return std::string();
+}
+
+int NPC::getHealth() const
+{
+	return 0;
+}
+
+int NPC::getPowerLevel() const
+{
+	return 0;
+}

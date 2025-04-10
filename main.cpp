@@ -1,12 +1,12 @@
 #include <iostream>
 
-#include "Item.cpp"
-#include "Inventory.cpp"
-#include "GameCharacter.cpp"
-#include "Villain.cpp"
-#include "NPC.cpp"
-#include "Hero.cpp"
-#include "Village.cpp"
+#include "Item.hpp"
+#include "Inventory.hpp"
+#include "GameCharacter.hpp"
+#include "Villain.hpp"
+#include "NPC.hpp"
+#include "Hero.hpp"
+#include "Village.hpp"
 #include "Interactable.hpp"
 
 int main() {

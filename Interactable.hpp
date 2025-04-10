@@ -1,8 +1,7 @@
 #ifndef INTERACTABLE_HPP
 #define INTERACTABLE_HPP
 
-#include "GameCharacter.hpp"
-
+class GameCharacter; // Forward declaration
 class Interactable {
 public:
     virtual ~Interactable() {}

@@ -12,6 +12,14 @@ GameCharacter::~GameCharacter()
 	std::cout << "GameCharacter " << name << " destroyed." << std::endl;
 }
 
+void GameCharacter::act()
+{
+}
+
+void GameCharacter::speak()
+{
+}
+
 void GameCharacter::takeDamage(int damage)
 {
 	health -= damage;

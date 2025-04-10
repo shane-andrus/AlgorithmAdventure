@@ -1,4 +1,5 @@
 #include "Hero.hpp"
+#include <iostream>
 
 Hero::Hero(std::string name, int health, int powerLevel)
 	: GameCharacter(name, health, powerLevel), quest("None") {
