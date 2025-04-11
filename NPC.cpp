@@ -2,23 +2,7 @@
 
 #include "NPC.hpp"
 
-// Default Constructor
-NPC::NPC() : GameCharacter("John", 100, 1), role("TBD")
-{
-}
-
-// Constructor Overloading
-NPC::NPC(std::string name) : GameCharacter(name, 100, 1), role("TBD")
-{
-}
-
-// Constructor Overloading
-NPC::NPC(std::string name, int powerLevel) : GameCharacter(name, 100, powerLevel), role("TBD")
-{
-}
-
-// Constructor Overloading
-NPC::NPC(std::string name, int powerLevel, std::string role) : GameCharacter(name, 100, powerLevel), role(role)
+NPC::NPC(std::string name = "John", int powerLevel = 1, std::string role = "TBD") : GameCharacter(name, powerLevel), role(role)
 {
 }
 

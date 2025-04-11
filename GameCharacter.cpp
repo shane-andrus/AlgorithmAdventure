@@ -1,17 +1,7 @@
 #include "GameCharacter.hpp"
 
-// Constructor Overloading
-GameCharacter::GameCharacter(std::string name, int health, int powerLevel) : name(name), health(health), powerLevel(powerLevel), inventory()
-{
-}
-
-// Constructor Overloading
-GameCharacter::GameCharacter(std::string name, int powerLevel): name(name), health(100), powerLevel(powerLevel), inventory()
-{
-}
- 
-// Constructor Overloading
-GameCharacter::GameCharacter(std::string name): name(name), health(100), powerLevel(1), inventory()
+// Because I'm including default values, I only need one constructor
+GameCharacter::GameCharacter(std::string name = "John", int powerLevel = 1) : name(name), health(100), powerLevel(powerLevel), inventory()
 {
 }
 

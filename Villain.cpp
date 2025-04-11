@@ -2,18 +2,8 @@
 
 #include "Villain.hpp"
 
-// Default Constructor
-Villian::Villian() : GameCharacter("John", 100, 1), evilPoints(1)
-{
-}
-
-// Constructor Overloading
-Villian::Villian(std::string name) : GameCharacter(name, 100, 1), evilPoints(1)
-{
-}
-
-// Constructor Overloading
-Villian::Villian(std::string name, int powerLevel, int evilPoints) : GameCharacter(name, 100, powerLevel), evilPoints(evilPoints)
+// Because I'm including default values, I only need one constructor
+Villian::Villian(std::string name = "John", int powerLevel = 1, int evilPoints = 1) : GameCharacter(name, powerLevel), evilPoints(evilPoints)
 {
 }
 

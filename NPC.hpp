@@ -12,9 +12,6 @@ class NPC : public GameCharacter, public Interactible
 private:
 	std::string role;
 public:
-	NPC();
-	NPC(std::string);
-	NPC(std::string, int);
 	NPC(std::string, int, std::string);
 	void act();
 	void speak();

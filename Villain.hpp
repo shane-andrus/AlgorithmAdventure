@@ -12,8 +12,6 @@ class Villian : public GameCharacter, public Interactible
 private:
 	int evilPoints;
 public:
-	Villian();
-	Villian(std::string);
 	Villian(std::string, int, int);
 	void act();
 	void speak();
