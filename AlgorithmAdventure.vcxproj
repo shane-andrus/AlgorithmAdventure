@@ -127,7 +127,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AlgorithmAdventure.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="GameCharacter.cpp" />
+    <ClCompile Include="Hero.cpp" />
+    <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="NPC.cpp" />
+    <ClCompile Include="Village.cpp" />
+    <ClCompile Include="Villain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameCharacter.hpp" />
+    <ClInclude Include="Hero.hpp" />
+    <ClInclude Include="Interactable.hpp" />
+    <ClInclude Include="Inventory.hpp" />
+    <ClInclude Include="Item.hpp" />
+    <ClInclude Include="NPC.hpp" />
+    <ClInclude Include="Village.hpp" />
+    <ClInclude Include="Villain.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
