@@ -2,10 +2,10 @@
 #include <iostream>
 #include "GameCharacter.hpp"
 
-void Npc::setRole()
-{
-	std::cout << "Enter a role for the NPC: ";
-	std::cin >> role;
+void Npc::setRole()  
+{  
+std::cout << "Enter a role for the NPC: ";
+std::cin >> role;
 }
 
 void Npc::act()
@@ -21,17 +21,17 @@ void Npc::speak()
 void Npc::interact(gameCharacter* target)
 {
 	std::cout << name << " interacts with " << target->getName() << std::endl;
-	std::cout << target->getName() << ": Hello, " << name << "! What can I do for you?" << std::endl;
+	std::cout << name << ": Hello, " << target->getName() << "! What can I do for you?" << std::endl;
 }
 
 void Npc::trade(gameCharacter* target)
 {
 	std::cout << name << " trades with " << target->getName() << std::endl;
-	std::cout << target->getName() << ": I have some good stuff!" << std::endl;
+	std::cout << name << ": I have some good stuff!" << std::endl;
 }
 
 void Npc::attack(gameCharacter* target)
 {
 	std::cout << name << " attacks " << target->getName() << std::endl;
-	std::cout << target->getName() << ": Why are you attacking me?!" << std::endl;
+	std::cout << name << ": You are not welcome to this village!" << std::endl;
 }

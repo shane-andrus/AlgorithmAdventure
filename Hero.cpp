@@ -40,6 +40,6 @@ Hero::Hero(std::string n, int h, int p)
 {
 }
 
-Hero::Hero() : gameCharacter("Hero", 100, 10), quest("Save the world"), inventory()
+Hero::Hero() : gameCharacter("Firefly", 100, 10), quest("Save the world"), inventory()
 {
 }

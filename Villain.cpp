@@ -8,13 +8,13 @@ void Villain::act()
 
 void Villain::speak()
 {
-	std::cout << name << ": I heard that you are the saver of this world. Let me see if you are worth the title!" << std::endl;
+	std::cout << name << ": I am " + name + ", the one who will set the world ablaze." << std::endl;
 }
 
 void Villain::interact(gameCharacter* target)
 {
 	std::cout << name << " interacts with " << target->getName() << std::endl;
-	std::cout << name << ": What are you trying to do?" << std::endl;
+	std::cout << name << ": What are you trying to do? Stay away from me!" << std::endl;
 }
 
 void Villain::trade(gameCharacter* target)
@@ -26,5 +26,5 @@ void Villain::trade(gameCharacter* target)
 void Villain::attack(gameCharacter* target)
 {
 	std::cout << name << " attacks " << target->getName() << std::endl;
-	std::cout << target->getName() << ": HAHAHA! Let's start a bettle!" << std::endl;
+	std::cout << name << ": HAHAHA! Let's start a bettle!" << std::endl;
 }

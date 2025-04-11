@@ -8,38 +8,43 @@
 int main() {
 	// Create a Hero
 	Hero hero;
-	hero.setName("Malcolm");
+	std::string name;
+	std::cout << "Enter the name of the hero: ";
+	std::getline(std::cin, name);
+	hero.setName(name);
 	hero.setHealth(100);
 	hero.setPowerLevel(10);
 	hero.setQuest();
 
 	// Create an NPC
 	Npc npc;
-	npc.setName("Lucy the Villager");
-	npc.setHealth(80);
-	npc.setPowerLevel(5);
 	npc.setRole();
+    npc.setName("Kafka the " + npc.getRole());
+	npc.setHealth(70);
+	npc.setPowerLevel(5);
 
 	// Create a Villain
 	Villain villain;
-	villain.setName("The Overlord");
+	villain.setName("Sam");
 	villain.setHealth(1000);
 	villain.setPowerLevel(500);
 
 	// Interact with the NPC
+	std::cout << std::endl;
 	npc.speak();
 	hero.interact(&npc);
 	npc.interact(&hero);
+	std::cout << std::endl;
 
 	// Trade with the NPC
 	hero.trade(&npc);
 	npc.trade(&hero);
-
+	std::cout << std::endl;
 	// Attack the Villain
 	villain.speak();
 	hero.attack(&villain);
 	villain.attack(&hero);
-	return 0;
+	std::cout << std::endl;
 
 	//Add a NPC to the village
 

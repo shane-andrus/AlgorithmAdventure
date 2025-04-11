@@ -9,6 +9,7 @@ protected:
    std::string role;  
 public:  
 	void setRole();
+	std::string getRole() const { return role; }
    void act();  
    void speak();  
    void interact(gameCharacter* target);  
