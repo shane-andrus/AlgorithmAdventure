@@ -4,17 +4,26 @@
 
 // MyClass::MyClass(int value) : m_value(value) {}
 
-GameCharacter::GameCharacter(std::string name, std::int health, std::int powerLevel) {
-
-}
-
-abstract void GameCharacter::act()
+GameCharacter::GameCharacter(std::string name, int health, int powerLevel)
 {
-	return abstract void();
 }
 
-abstract void GameCharacter::speak()
+void GameCharacter::healthDrain(int damage)
 {
-	return abstract void();
-}
+	extern int health;
+	health = health - damage;
+};
+
+
+void GameCharacter::act()
+{
+	std::cout << name << " is acting." << std::endl;
+};
+
+
+void GameCharacter::speak()
+{
+	std::cout << name << " says: Hello!" << std::endl;
+};
+
 

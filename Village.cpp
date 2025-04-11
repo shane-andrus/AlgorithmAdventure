@@ -1,17 +1,18 @@
 #include "Village.hpp"
+#include "NPC.hpp"
+#include <list>
 
-Village::Village(std::string name)
-{
-}
 
 Village::Village(std::string name, std::list<NPC> inhabitants)
 {
 }
 
-Village::addInhabitant(NPC npc)
+void Village::addInhabitant(NPC npc)
 {
 }
 
-Village::removeInhabitant(NPC npc)
+void Village::removeInhabitant(NPC npc)
 {
 }
+
+

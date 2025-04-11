@@ -1,27 +1,29 @@
 #include "Hero.hpp"
-
+#include "GameCharacter.hpp"
 
 
 Hero::Hero(std::string quest)
 {
 }
 
-Hero::act()
+void Hero::act()
 {
 }
 
-Hero::speak()
+void Hero::speak()
 {
 }
 
-Hero::interactWith(GameCharacter target)
+void Hero::interactWith(GameCharacter target)
 {
 }
 
-Hero::trade(GameCharacter target)
+void Hero::trade(GameCharacter target)
 {
 }
 
-Hero::attack(GameCharacter target)
+void Hero::attack(GameCharacter target)
 {
 }
+
+

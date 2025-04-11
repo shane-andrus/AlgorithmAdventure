@@ -1,26 +1,29 @@
-#include "GaneCharacter.hpp"
+#include "GameCharacter.hpp"
 #include "NPC.hpp"
 
-NPC::HPC(std::string role)
+NPC::NPC(std::string role)
 {
 }
 
-NPC::act()
+void NPC::act()
 {
 }
 
-NPC::speak()
+void NPC::speak()
 {
 }
 
-NPC::interactWith(GameCharacter target)
+void NPC::interactWith(GameCharacter target)
 {
 }
 
-NPC::trade(GameCharacter target)
+void NPC::trade(GameCharacter target)
 {
 }
 
-NPC::attack(GameCharacter target)
+void NPC::attack(GameCharacter target)
 {
+	GameCharacter::healthDrain(50);
 }
+
+

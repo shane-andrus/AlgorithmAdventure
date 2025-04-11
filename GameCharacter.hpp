@@ -1,20 +1,20 @@
-#include <iostream>
-#include <string> 
+#include <iostream>  
+#include <string>  
 
-#ifndef GAMECHARACTER_HPP
-#define GAMECHARACTER_HPP
+#ifndef GAMECHARACTER_HPP  
+#define GAMECHARACTER_HPP  
 
+class GameCharacter {  
+protected:  
+   std::string name;  
+   int health;   
+   int powerLevel;  
 
-class GameCharacter {
-protected:
-	std::string name;
-	std::int health;
-	std::int powerLevel;
-
-public:
-	GameCharacter(std::string, std::int, std::int);
-	abstract void act();
-	abstract void speak();
-};
+public:  
+   GameCharacter(std::string name, int health, int powerLevel); 
+   void healthDrain(int damage);
+   virtual void act() = 0;   
+   virtual void speak() = 0; 
+};  
 
 #endif

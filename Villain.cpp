@@ -1,25 +1,29 @@
 #include "Villain.hpp"
+#include "GameCharacter.hpp"
 
-Villain::Villain(std::int evilPoints)
+Villain::Villain(int evilPoints)
 {
 }
 
-Villain::act()
+void Villain::act()
 {
 }
 
-Villain::speak()
+void Villain::speak()
 {
 }
 
-Villain::interactWith(GameCharacter target)
+void Villain::interactWith(GameCharacter target)
 {
 }
 
-Villain::trade(GameCharacter target)
+void Villain::trade(GameCharacter target)
 {
 }
 
-Villain::attack(GameCharacter target)
+void Villain::attack(GameCharacter target)
 {
+
 }
+
+

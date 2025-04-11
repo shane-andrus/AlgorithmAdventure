@@ -1,8 +1,10 @@
-#include <iostream>
-#include <string>
-
 #ifndef HERO_HPP
 #define HERO_HPP
+
+#include <iostream>
+#include <string>
+#include "GameCharacter.hpp"
+
 
 class Hero {
 protected:
@@ -11,11 +13,11 @@ protected:
 public:
 	Hero(std::string);
 
-	act();
-	speak();
-	interactWith(GameCharacter target);
-	trade(GameCharacter target);
-	attack(GameCharacter target);
+	void act();
+	void speak();
+	void interactWith(GameCharacter target);
+	void trade(GameCharacter target);
+	void attack(GameCharacter target);
 };
 
 #endif

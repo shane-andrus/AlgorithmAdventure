@@ -1,21 +1,24 @@
-#include <iostream>
-#include <string>
-
 #ifndef VILLIAN_HPP
 #define VILLIAN_HPP
 
+#include <iostream>
+#include <string>
+#include "GameCharacter.hpp"
+
+
+
 class Villain {
 protected:
-	std::int evilPoints;
+	int evilPoints;
 
 public:
-	Villain(std::int);
+	Villain(int);
 
-	act();
-	speak();
-	interactWith(GameCharacter target);
-	trade(GameCharacter target);
-	attack(GameCharacter target);
+	void act();
+	void speak();
+	void interactWith(GameCharacter target);
+	void trade(GameCharacter target);
+	void attack(GameCharacter target);
 
 };
 

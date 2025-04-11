@@ -1,18 +1,16 @@
-#include <iostream>
-#include <string> 
-#include <"NPC.hpp"> 
+#ifndef INTERACTABLE_HPP  
+#define INTERACTABLE_HPP  
 
+#include <iostream>  
+#include <string>  
+#include "NPC.hpp"  
+#include "GameCharacter.cpp"  
 
-#ifndef INTERACTABLE_HPP
-#define INTERACTABLE_HPP
-
-class Interactable {
-public:
-	interactWith(GameCharacter target);
-	trade(GameCharacter target);
-	attack(GameCharacter target);
-};
-
-
+class Interactable {  
+public:  
+   void interactWith(GameCharacter target);  
+   void trade(GameCharacter target);  
+   void attack(GameCharacter target);  
+};  
 
 #endif

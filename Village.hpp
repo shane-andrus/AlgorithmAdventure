@@ -1,8 +1,10 @@
+#ifndef VILLAGE_HPP
+#define VILLAGE_HPP
+
 #include <iostream>
 #include <string>
 
-#indef VILLAGE_HPP
-#define VILLAGE_HPP
+
 
 class Village {
 protected:
@@ -12,8 +14,8 @@ protected:
 public:
 	//GameCharacter(std::string, std::int, std::int);
 	Village(std::string, std::list<NPC>);
-	addInhabitant(NPC npc);
-	removeInhabitant(NPC npc);
+	void addInhabitant(NPC npc);
+	void removeInhabitant(NPC npc);
 
 };
 
