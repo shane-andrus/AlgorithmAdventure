@@ -3,14 +3,17 @@
 #include "Hero.hpp"
 #include "Item.hpp"
 
+// Default constructor
 Hero::Hero() : GameCharacter("John", 100, 1), quest("TBD")
 {
 }
 
+// Constructor overloading
 Hero::Hero(std::string name) : GameCharacter(name, 100, 1), quest("TBD")
 {
 }
 
+// Constructor overloading
 Hero::Hero(std::string name, int powerLevel) : GameCharacter(name, 100, powerLevel), quest("TBD")
 {
 }
@@ -33,6 +36,7 @@ void Hero::interactWith(GameCharacter& target)
 	target.act();
 }
 
+// Swaps inventory items with another GameCharacter
 void Hero::trade(GameCharacter& target, int inventoryIndexThis, int inventoryIndexOther)
 {
 	Item thisItem = Item(inventory.getItem(inventoryIndexThis).getName(), inventory.getItem(inventoryIndexThis).getValue());
@@ -43,6 +47,7 @@ void Hero::trade(GameCharacter& target, int inventoryIndexThis, int inventoryInd
 	target.getInventory().removeItem(otherItem);
 }
 
+// Decreases another GameCharacter's health by the hero's power level
 void Hero::attack(GameCharacter& target)
 {
 	target.setHealth(target.getHealth() - powerLevel);
@@ -56,4 +61,8 @@ std::string Hero::getQuest()
 void Hero::setQuest(std::string quest)
 {
 	this->quest = quest;
+}
+
+Hero::~Hero()
+{
 }

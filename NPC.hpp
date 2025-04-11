@@ -23,6 +23,7 @@ public:
 	void attack(GameCharacter& target);
 	std::string getRole();
 	void setRole(std::string);
+	virtual ~NPC();
 };
 
 #endif

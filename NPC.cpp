@@ -2,18 +2,22 @@
 
 #include "NPC.hpp"
 
+// Default Constructor
 NPC::NPC() : GameCharacter("John", 100, 1), role("TBD")
 {
 }
 
+// Constructor Overloading
 NPC::NPC(std::string name) : GameCharacter(name, 100, 1), role("TBD")
 {
 }
 
+// Constructor Overloading
 NPC::NPC(std::string name, int powerLevel) : GameCharacter(name, 100, powerLevel), role("TBD")
 {
 }
 
+// Constructor Overloading
 NPC::NPC(std::string name, int powerLevel, std::string role) : GameCharacter(name, 100, powerLevel), role(role)
 {
 }
@@ -36,6 +40,7 @@ void NPC::interactWith(GameCharacter& target)
 	target.speak();
 }
 
+// Swaps inventory items with another GameCharacter
 void NPC::trade(GameCharacter& target, int inventoryIndexThis, int inventoryIndexOther)
 {
 	Item thisItem = Item(inventory.getItem(inventoryIndexThis).getName(), inventory.getItem(inventoryIndexThis).getValue());
@@ -46,6 +51,7 @@ void NPC::trade(GameCharacter& target, int inventoryIndexThis, int inventoryInde
 	target.getInventory().removeItem(otherItem);
 }
 
+// Decreases the health of another GameCharacter by the NPC's power level
 void NPC::attack(GameCharacter& target)
 {
 	target.setHealth(target.getHealth() - powerLevel*0.5);
@@ -59,4 +65,8 @@ std::string NPC::getRole()
 void NPC::setRole(std::string role)
 {
 	this->role = role;
+}
+
+NPC::~NPC()
+{
 }

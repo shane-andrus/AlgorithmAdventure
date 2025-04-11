@@ -22,6 +22,7 @@ public:
 	void attack(GameCharacter& target);
 	std::string getQuest();
 	void setQuest(std::string);
+	virtual ~Hero();
 };
 
 #endif

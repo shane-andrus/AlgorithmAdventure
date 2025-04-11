@@ -20,6 +20,8 @@ int main() {
 	std::vector<Item> treasures = { goldNecklace, pearlNecklace, goldRingWithDiamonds, goldRingWithRuby, silverSpoon };
 
 	// Baron Ruport the Rich claims the treasures
+	// Composition: Heros have inventories, but inventories can't exist without a hero
+	// Aggregation: Inventorites can have items, but items can exist outside of inventories
 	while (treasures.size() > 0) {
 		ruportTheRich.getInventory().addItem(treasures[0]);
 		treasures.erase(treasures.begin());
@@ -54,6 +56,7 @@ int main() {
 	NPC henry("Henry the Hotspur", 2, "warrior");
 
 	// The warriors move to Stonetown
+	// Aggregation: Villages can contain NPCs, but NPCs can exist outside of villages
 	stonetown.addInhabitant(bertrand);
 	stonetown.addInhabitant(edward);
 	stonetown.addInhabitant(galahad);
@@ -65,6 +68,9 @@ int main() {
 	stonetown.addInhabitant(rodrigo);
 	stonetown.addInhabitant(siegfried);
 	stonetown.addInhabitant(william);
+
+	// Ordering the warriors by power level
+	stonetown.sortInhabitantsByPowerLevel();
 
 	return 0;
 }

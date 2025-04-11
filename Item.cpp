@@ -1,13 +1,16 @@
 #include "Item.hpp"
 
+// Default constructor
 Item::Item(): name("item"), value(0)
 {
 }
 
+// Constructor overloading
 Item::Item(std::string name): name(name), value(0)
 {
 }
 
+// Constructor overloading
 Item::Item(std::string name, int value): name(name), value(value)
 {
 }
