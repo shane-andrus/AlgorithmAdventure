@@ -21,8 +21,10 @@ public:
 	NPC& getInhabitant(int);
 	void sortInhabitantsByName();
 	void sortInhabitantsByPowerLevel();
-	int partitionByName(std::string, std::string, std::string);
-	int partitionByPowerLevel(int, int, int);
+	void quickSortByName(std::vector<NPC>, int, int);
+	void quickSortByPowerLevel(std::vector<NPC>, int, int);
+	int partitionByName(std::vector<NPC>, int, int, std::string);
+	int partitionByPowerLevel(std::vector<NPC>, int, int, int);
 	void swapNPCs(std::vector<NPC>, int, int);
 	virtual ~Village();
 };

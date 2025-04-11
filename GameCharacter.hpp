@@ -2,6 +2,7 @@
 #define GAMECHARACTER_HPP
 
 #include <string>
+#include <vector>
 
 #include "Inventory.hpp"
 

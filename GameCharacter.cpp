@@ -1,13 +1,16 @@
 #include "GameCharacter.hpp"
 
+// Constructor Overloading
 GameCharacter::GameCharacter(std::string name, int health, int powerLevel) : name(name), health(health), powerLevel(powerLevel), inventory()
 {
 }
 
+// Constructor Overloading
 GameCharacter::GameCharacter(std::string name, int powerLevel): name(name), health(100), powerLevel(powerLevel), inventory()
 {
 }
  
+// Constructor Overloading
 GameCharacter::GameCharacter(std::string name): name(name), health(100), powerLevel(1), inventory()
 {
 }
