@@ -3,18 +3,8 @@
 #include "Hero.hpp"
 #include "Item.hpp"
 
-// Default constructor
-Hero::Hero() : GameCharacter("John", 100, 1), quest("TBD")
-{
-}
-
-// Constructor overloading
-Hero::Hero(std::string name) : GameCharacter(name, 100, 1), quest("TBD")
-{
-}
-
-// Constructor overloading
-Hero::Hero(std::string name, int powerLevel) : GameCharacter(name, 100, powerLevel), quest("TBD")
+// Because I'm including default values, I only need one constructor
+Hero::Hero(std::string name = "John", int powerLevel = 1) : GameCharacter(name, powerLevel), quest("TBD")
 {
 }
 

@@ -12,8 +12,6 @@ class Hero : public GameCharacter, public Interactible
 private:
 	std::string quest;
 public:
-	Hero();
-	Hero(std::string);
 	Hero(std::string, int);
 	void act();
 	void speak();
