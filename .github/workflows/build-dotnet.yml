@@ -1,21 +1,28 @@
-name: Build C++ Solution
+name: Build AlgorithmAdventure
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: windows-latest  # Use Windows because .sln files are typically built with MSBuild on Windows
 
     steps:
+    # Step 1: Checkout the repository
     - name: Checkout code
       uses: actions/checkout@v4
 
+    # Step 2: Set up MSBuild
     - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v3.0.0
+      uses: microsoft/setup-msbuild@v2
 
-    - name: Build solution
-      run: msbuild AlgorithmAdventure.sln /p:Configuration=Release
+    # Step 3: Restore NuGet packages (if your .sln references any)
+    - name: Restore NuGet packages
+      run: nuget restore AlgorithmAdventure.sln
+
+    # Step 4: Build the solution
+    - name: Build the solution
+      run: msbuild AlgorithmAdventure.sln /p:Configuration=Release /p:Platform="Any CPU"
