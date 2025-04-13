@@ -1,75 +1,21 @@
-name: Build Dotnet Solutions
+name: Build C++ Solution
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ main ]
-    paths:
-      - '**/*.cs'
-      - '**/*.csproj'
-      - '**/*.sln'
-      - '**/*.config'
-      - '**/*.resx'
-      - '**/*.xaml'
-      - '**/*.json'
-      - '**/*.xml'
-      - '.github/workflows/build-dotnet.yml'
+    branches: [ "main" ]
 
 jobs:
-  get_solutions:
-    runs-on: ubuntu-latest
-    outputs:
-       matrix: ${{ steps.build_solutions_list.outputs.projects }}
+  build:
+    runs-on: windows-latest
+
     steps:
-      - id: checkout
-        name: Checkout
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      - id: build_solutions_list
-        name: Build Solutions List
-        run: |
-          # Do not attempt to simplify this code. See this for details:
-          # https://stackoverflow.com/a/76666261
-          delimiter="$(openssl rand -hex 8)"
-          solutions_as_json=$(find . -type f -name "*.sln" | jq -R -s -c 'split("\n")[:-1]')
-          echo "projects<<${delimiter}" >> "${GITHUB_OUTPUT}"
-          echo "$solutions_as_json" >> "${GITHUB_OUTPUT}"
-          echo "${delimiter}" >> "${GITHUB_OUTPUT}"
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v3.0.0
 
-  build_dotnet_solutions:
-    runs-on: ubuntu-latest
-    needs: get_solutions
-    strategy:
-      max-parallel: 5
-      fail-fast: false
-      matrix:
-        solutions: ${{ fromJson(needs.get_solutions.outputs.matrix) }}
-    steps:
-      - id: checkout
-        name: Checkout
-        uses: actions/checkout@v4
-
-      - id: setup_dotnet
-        name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: 8.0.x
-
-      - id: restore
-        name: Restore solution
-        run: dotnet restore ${{ matrix.solutions }}
-
-      - id: debug-build
-        name: Build Debug solution
-        run: dotnet build ${{ matrix.solutions }} --no-restore /p:WarningLevel=0
-
-      - id: test
-        name: Test solution
-        run: dotnet test ${{ matrix.solutions }}
-
-      - id: release-build
-        name: Build Release solution
-        run: dotnet build ${{ matrix.solutions }} --no-restore /p:WarningLevel=0 -c Release
-
-        # TODO: publish
+    - name: Build solution
+      run: msbuild AlgorithmAdventure.sln /p:Configuration=Release
