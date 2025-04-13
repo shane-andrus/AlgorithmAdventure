@@ -19,10 +19,6 @@ jobs:
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v2
 
-    # Step 4: Restore NuGet packages (remove if not needed)
-    - name: Restore NuGet packages
-      run: nuget restore AlgorithmAdventure.sln
-
     # Step 5: Build the solution with Release|x64
     - name: Build the solution
       run: msbuild AlgorithmAdventure.sln /p:Configuration=Release /p:Platform=x64 /v:diag
