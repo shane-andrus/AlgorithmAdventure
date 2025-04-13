@@ -4,6 +4,7 @@ on:
   push:
     branches: [ main ]
   pull_request:
+  workflow_dispatch:
 
 jobs:
   build:
@@ -18,10 +19,10 @@ jobs:
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v2
 
-    # Step 3: Restore NuGet packages (if needed)
+    # Step 4: Restore NuGet packages (remove if not needed)
     - name: Restore NuGet packages
       run: nuget restore AlgorithmAdventure.sln
 
-    # Step 4: Build the solution with Release|x64
+    # Step 5: Build the solution with Release|x64
     - name: Build the solution
-      run: msbuild AlgorithmAdventure.sln /p:Configuration=Release /p:Platform=x64
+      run: msbuild AlgorithmAdventure.sln /p:Configuration=Release /p:Platform=x64 /v:diag
