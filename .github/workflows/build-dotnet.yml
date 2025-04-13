@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest  # Use Windows because .sln files are typically built with MSBuild on Windows
+    runs-on: windows-latest
 
     steps:
     # Step 1: Checkout the repository
@@ -19,10 +19,10 @@ jobs:
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v2
 
-    # Step 3: Restore NuGet packages (if your .sln references any)
+    # Step 3: Restore NuGet packages (if needed)
     - name: Restore NuGet packages
       run: nuget restore AlgorithmAdventure.sln
 
-    # Step 4: Build the solution
+    # Step 4: Build the solution with Release|x64
     - name: Build the solution
-      run: msbuild AlgorithmAdventure.sln /p:Configuration=Release /p:Platform="Any CPU"
+      run: msbuild AlgorithmAdventure.sln /p:Configuration=Release /p:Platform=x64
