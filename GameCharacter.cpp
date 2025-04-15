@@ -1,67 +1,79 @@
 #include "GameCharacter.hpp"
+#include "Interactable.hpp"
 
 
-GameCharacter::GameCharacter(): name("N/A"), health(0), powerLevel(0)
+GameCharacter::GameCharacter()
 {
-    std::cout << "\nGame Character created! (Default)" << std::endl;
+    name = "Nobody";
+    health = 100;
+    powerLevel = 100;
 }
 
-GameCharacter::GameCharacter(const std::string& name, int health, int powerLevel)
+GameCharacter::GameCharacter(const std::string name, int health, int powerLevel)
 {
-    std::cout << "\nGame Character created! \nName: " << name << "\nHealth: " << health << "\nPower Level: " << powerLevel; 
+    this->name = name;
+    this->health = health;
+    this->powerLevel = powerLevel;
 }
 
-GameCharacter::GameCharacter(const std::string &name, int health, int powerLevel)
+void GameCharacter::act()
 {
+    std::cout << this->name << " is acting!" << std::endl;
 }
 
-GameCharacter::~GameCharacter()
+void GameCharacter::speak()
 {
+    std::cout << "My name is " << this->name << 
+    "\nI have " << this->health << "health" <<
+    "\nMy power level is " << this->powerLevel;
 }
 
-int GameCharacter::getHealth() const
+void GameCharacter::interactWith(GameCharacter* target)
 {
-    return health;
+    std::cout << this->name << "interacts with " << target-> getName();
 }
 
-int GameCharacter::getPowerLevel() const 
+void GameCharacter::tradeWith(GameCharacter* target)
 {
-    return powerLevel;
+    std::cout << this->name << " trades with " << target->name;
 }
 
-std::string GameCharacter::getName() const 
+void GameCharacter::attack(GameCharacter* target)
 {
-    return name; 
+    std::cout << this->name << " attacks " << target->name;
 }
 
-void GameCharacter::act() {
-    std::cout << name << " is acting." << std::endl;
+//getters
+
+std::string GameCharacter::getName()
+{
+    return this->name;
 }
 
-void GameCharacter::speak() {
-    std::cout << name << " is speaking." << std::endl;
+int GameCharacter::getHealth()
+{
+    return this->health;
 }
 
-// Interactable methods
-void GameCharacter::interactWith(GameCharacter* target) {
-    std::cout << name << " interacts with " << target->getName() << "." << std::endl;
+int GameCharacter::getPowerLevel()
+{
+    return this->powerLevel;
 }
 
-void GameCharacter::trade(GameCharacter* target) {
-    std::cout << name << " trades with " << target->getName() << "." << std::endl;
+//setters
+
+void GameCharacter::setName(std::string name)
+{
+    this->name = name;
 }
 
-void GameCharacter::attack(GameCharacter* target) {
-    std::cout << name << " attacks " << target->getName() << "." << std::endl;
+void GameCharacter::setHealth(int health)
+{
+    this->health = health;
 }
 
-
-std::ostream& operator<<(std::ostream& os, const GameCharacter& character) {
-    os << "GameCharacter [Name: " << character.name
-       << ", Health: " << character.health
-       << ", Power Level: " << character.powerLevel << "]";
-    return os;
+void GameCharacter::setPowerLevel(int powerLevel) 
+{
+    this->powerLevel = powerLevel;
 }
-
-
 

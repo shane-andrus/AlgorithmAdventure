@@ -12,26 +12,36 @@ protected:
     int powerLevel;
 
 public:
-    // Constructors and destructor
+    // constructors and destructor
     GameCharacter();
-    GameCharacter(const std::string &name, int health, int powerLevel);
+    GameCharacter(const std::string name, int health, int powerLevel);
+    
     virtual ~GameCharacter();
 
-    // Getters
-    std::string getName() const;
-    int getHealth() const;
-    int getPowerLevel() const;
+    // getters
+    std::string getName();
+    int getHealth();
+    int getPowerLevel();
 
-    // Virtual methods
+    
+
+    //setters
+    void setName(std::string name);
+    void setHealth(int health);
+    void setPowerLevel(int powerLevel);
+    
+
+    // virtual methods
     virtual void act();
     virtual void speak();
 
-    // Interactable methods
-    virtual void interactWith(GameCharacter* target);
-    virtual void trade(GameCharacter* target);
-    virtual void attack(GameCharacter* target);
+    // interations
+    void interactWith(GameCharacter* target);
+    void tradeWith(GameCharacter *target);
+    void attack(GameCharacter* target);
+    
 
-    // Overloaded operator
+    // overload
     friend std::ostream& operator<<(std::ostream& os, const GameCharacter& character);
 };
 
