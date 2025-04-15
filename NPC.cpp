@@ -23,15 +23,15 @@ std::ostream& operator<<(std::ostream& os, const NPC& npc) {
     return os;
 }
 
-// Implement other methods as needed
+// methods
 void NPC::act() {
-    std::cout << "NPC is acting." << std::endl;
+    std::cout << "Villain is acting!" << std::endl;
 }
 void NPC::speak() {
-    std::cout << "NPC is speaking." << std::endl;
+    std::cout << "HAHAHAHA I'M THE VILLAIN!" << std::endl;
 }
 void NPC::interactWith(GameCharacter* target) {
-    std::cout << "NPC interacts with " << target->getName() << std::endl;
+    std::cout << this->getName() << " interacts with " << target->getName() << "!" << std::endl;
 }
 void NPC::trade(GameCharacter* target) {
     std::cout << "NPC trades with " << target->getName() << std::endl;
