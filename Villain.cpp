@@ -7,10 +7,15 @@ Villain::Villain() : GameCharacter("Unamed", 100, 20), evilPlan("Unknown")
     std::cout << "Villain created! (Default)" << std::endl;
 }
 
-Villain::Villain() : GameCharacter("Unamed", 100, 20), evilPlan(evilPlan)
+Villain::Villain(const std::string name, int health, int powerLevel, int evilPoints) : GameCharacter(name, health, powerLevel), evilPoints(evilPoints)
 {
-    std::cout << "Villain created with evil plan: "  << evilPlan << std::endl;
+    this->setName(name);
+    this->setHealth(health);
+    this->setPowerLevel(powerLevel);
+    this->evilPlan = "Unknown";
 }
+
+
 
 std::string Villain::getEvilPlan()
 {
@@ -41,4 +46,14 @@ void Villain::trade(GameCharacter* target) {
 }
 void Villain::attack(GameCharacter* target) {
     std::cout << this->getName() << " attacks " << target->getName() << "!" << std::endl;
+}
+
+int Villain::getEvilPoints()
+{
+    return evilPoints;
+}
+
+void Villain::setEvilPoints(int evilPoints)
+{
+    this->evilPoints = evilPoints;
 }

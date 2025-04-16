@@ -7,6 +7,7 @@
 
 class Hero : public GameCharacter
 {
+    public:
     Hero(std::string quest);
     Hero();
     Hero(std::string name, int health, int powerLevel, std::string quest);
